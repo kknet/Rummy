@@ -10,27 +10,27 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import com.gamegards.allinonev3.Activity.Homepage;
 import com.gamegards.allinonev3.Activity.LoginScreen;
 import com.gamegards.allinonev3.R;
 import com.gamegards.allinonev3.Utils.Funtions;
-import com.gamegards.allinonev3.Utils.SharePref;
 import com.gamegards.allinonev3.Utils.Variables;
 
 
 public class DialogSettingOption {
 
     Activity context;
+    private Boolean isSound;
+
     public DialogSettingOption(Activity context) {
         this.context = context;
     }
 
-    public interface DealerInterface{
+    public interface DealerInterface {
 
         void onClick(int pos);
 
@@ -63,8 +63,11 @@ public class DialogSettingOption {
 //            }
 //        });
 
-        ((TextView) dialog.findViewById(R.id.tv_playerid)).setText("Player ID : #"+ SharePref.getU_id());
 
+        /*etho comment mai kita*/
+
+//        ((TextView) dialog.findViewById(R.id.tv_playerid)).setText("Player ID : #"+ SharePref.getU_id());
+//
         (dialog.findViewById(R.id.btnPrivacy)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,7 +95,6 @@ public class DialogSettingOption {
 
             }
         });
-
 
 
         (dialog.findViewById(R.id.btnHelpandsupport)).setOnClickListener(new View.OnClickListener() {
@@ -125,54 +127,79 @@ public class DialogSettingOption {
 
         dialog.show();
 
-        Switch switchd = (Switch) dialog.findViewById(R.id.switch1);
+        ImageView switchd = (ImageView) dialog.findViewById(R.id.iv_sound);
         SharedPreferences prefs = context.getSharedPreferences(Homepage.MY_PREFS_NAME, MODE_PRIVATE);
         String value = prefs.getString("issoundon", "1");
 
-        if (value.equals("0")) {
+        isSound=true;
 
-            switchd.setChecked(true);
+        if (value.equals("0")) {
+            isSound=false;
+            //   switchd.setChecked(true);
+            switchd.setImageResource(R.drawable.icon_sound_off);
 
         } else {
-
-            switchd.setChecked(false);
+            isSound=true;
+            switchd.setImageResource(R.drawable.icon_sound);
+//            switchd.setChecked(false);
         }
 
-        switchd.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        switchd.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if (isChecked) {
+            public void onClick(View v) {
+                if (isSound){
+                    isSound = false;
+                    switchd.setImageResource(R.drawable.icon_sound_off);
                     SharedPreferences.Editor editor = context.getSharedPreferences(Homepage.MY_PREFS_NAME, MODE_PRIVATE).edit();
                     editor.putString("issoundon", "0");
                     editor.apply();
-
-
-                    // Toast.makeText(PublicTable.this, "On", Toast.LENGTH_LONG).show();
-
-                } else {
-                    // Toast.makeText(PublicTable.this, "Off", Toast.LENGTH_LONG).show();
+                }else{
+                    isSound = true;
+                    switchd.setImageResource(R.drawable.icon_sound);
                     SharedPreferences.Editor editor = context.getSharedPreferences(Homepage.MY_PREFS_NAME, MODE_PRIVATE).edit();
                     editor.putString("issoundon", "1");
                     editor.apply();
-
                 }
+
             }
         });
+
+
+//        switchd.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+//                if (isChecked) {
+//                    SharedPreferences.Editor editor = context.getSharedPreferences(Homepage.MY_PREFS_NAME, MODE_PRIVATE).edit();
+//                    editor.putString("issoundon", "0");
+//                    editor.apply();
+//
+//
+//                    // Toast.makeText(PublicTable.this, "On", Toast.LENGTH_LONG).show();
+//
+//                } else {
+//                    // Toast.makeText(PublicTable.this, "Off", Toast.LENGTH_LONG).show();
+//                    SharedPreferences.Editor editor = context.getSharedPreferences(Homepage.MY_PREFS_NAME, MODE_PRIVATE).edit();
+//                    editor.putString("issoundon", "1");
+//                    editor.apply();
+//
+//                }
+//            }
+//        });
 
 
         LinearLayout lnr_language = dialog.findViewById(R.id.lnr_language);
         lnr_language.removeAllViews();
 
-        AddViewToLanguage(lnr_language,"English");
+        AddViewToLanguage(lnr_language, "English");
 
     }
 
-    private void AddViewToLanguage(ViewGroup viewGroup, String text){
+    private void AddViewToLanguage(ViewGroup viewGroup, String text) {
 
-        View view = Funtions.CreateDynamicViews(R.layout.item_language,viewGroup,context);
+        View view = Funtions.CreateDynamicViews(R.layout.item_language, viewGroup, context);
 
         TextView textView = view.findViewById(R.id.tv_language);
-        textView.setText(""+text);
+        textView.setText("" + text);
         textView.setTag(text);
 
 

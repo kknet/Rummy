@@ -49,6 +49,10 @@
     <string name="click_here_to_accept">Click here to accept</string>
     <string name="terms_and_conditions">Terms and Conditions</string>
     <string name="title_activity_online_payment">PayuMoney</string>
+    <string name="terms_amp_conditions"><u><![CDATA[Terms & Conditions]]></u></string>
+    <string name="privacy_policy"><u>Privacy Policy</u></string>
+    <string name="how_to_play"><u>How to play</u></string>
+    <string name="help_amp_support"><u><![CDATA[Help & Support]]></u></string>
 
 
 </resources>
