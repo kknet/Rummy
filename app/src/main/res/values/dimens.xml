@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_left">5dp</dimen>
+    <dimen name="margin_left_group">5dp</dimen>
+
+    <dimen name="main_card_margin_right">-40dp</dimen>
+
+    <dimen name="card_width">80dp</dimen>
+
+    <dimen name="card_hieght">80dp</dimen>
+
+    <dimen name="chips_size">35dp</dimen>
+
+    <dimen name="wind_card_width">45dp</dimen>
+    <dimen name="wild_joker_width">11dp</dimen>
+
+
+    <dimen name="home_card_width">150dp</dimen>
+    <dimen name="home_card_height">200dp</dimen>
+    <dimen name="home_card_left_mar">30dp</dimen>
+    <dimen name="table_text_size">18sp</dimen>
+
+    <dimen name="player2_margin_right">-40dp</dimen>
+    <dimen name="player3_margin_right">60dp</dimen>
+
+
+    <dimen name="player4_margin_right">40dp</dimen>
+    <dimen name="player4_margin_bottom">-150dp</dimen>
+
+    <dimen name="player5_margin_right">-40dp</dimen>
+    <dimen name="player5_margin_bottom">-150dp</dimen>
+
+
+    <dimen name="player_width">130dp</dimen>
+    <dimen name="player_height">100dp</dimen>
+    <dimen name="wallet_text_margin_top">-20dp</dimen>
+    <dimen name="login_edit_height">45dp</dimen>
+    <dimen name="login_edit_width">290dp</dimen>
+
+    <dimen name="pop_up_top_margin">-40dp</dimen>
+
+
+    <dimen name="ab_card_width">100dp</dimen>
+    <dimen name="ab_card_hight">100dp</dimen>
+
+    <dimen name="Player1_width">70dp</dimen>
+    <dimen name="Player1_height">90dp</dimen>
+
+
+    <dimen name="Player_glow_width">75dp</dimen>
+    <dimen name="Player_glow_height">75dp</dimen>
+    <dimen name="Player_rt_size">67dp</dimen>
+    <dimen name="Player_circle_size">57dp</dimen>
+    <dimen name="Player_progress_size">60dp</dimen>
+
+    <dimen name="ab_button_width">75dp</dimen>
+
+    <dimen name="Player1_bg_width">70dp</dimen>
+    <dimen name="Player1_bg_height">70dp</dimen>
+
+    <dimen name="Player1_circle_width">51dp</dimen>
+    <dimen name="Player2_circle_height">53dp</dimen>
+
+    <dimen name="Player1_pg_width">53dp</dimen>
+    <dimen name="dt_button_height">70dp</dimen>
+    <dimen name="dt_button_width">130dp</dimen>
+
+    <dimen name="dt_tie_radius">90dp</dimen>
+
+
+</resources>
